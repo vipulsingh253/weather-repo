@@ -26,10 +26,8 @@ const weatherIconMap = {
 };
 
 
-//   Main function to fetch and display weather data for a city
-  
- 
-async function fetchAndDisplayWeather(city) {
+// Main function to fetch and display weather data for a city
+   async function fetchAndDisplayWeather(city) {
     try {
         const [currentWeather, forecastData] = await Promise.all([
             fetch(currentWeatherUrl + city + `&appid=${apiKey}`),
