@@ -14,7 +14,7 @@ const alertDisplay = document.querySelector(".alert");
 const forecastContainer = document.querySelector(".forecast-container");
 const recentSearchesContainer = document.querySelector(".recent-searches-container");
 
-// Map weather conditions to icon images
+// Map weather conditions to  images
 const weatherIconMap = {
     "Clouds": "images/clouds.png",
     "Clear": "images/clear.png",
@@ -48,7 +48,7 @@ async function fetchAndDisplayWeather(city) {
         updateForecastUI(forecastResult);
         updateRecentSearches(city);
 
-        // Show weather info and hide error message 
+        // Show weather information and hide error message 
         errorDisplay.classList.add("hidden");
         weatherDisplay.classList.remove("hidden");
         forecastContainer.classList.remove("hidden");
