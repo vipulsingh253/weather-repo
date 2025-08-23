@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Forecast App (Tailwind)</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -16,63 +19,96 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Poppins', 'sans-serif'],
+              sans: ["Poppins", "sans-serif"],
             },
-          }
-        }
-      }
+          },
+        },
+      };
     </script>
-
-</head>
-<body class="bg-gray-900 font-sans">
-
-    <div class="card w-11/12 max-w-[470px] bg-gradient-to-bl from-[#00feba] to-[#5b548a] text-white mx-auto mt-12 rounded-2xl py-10 px-8 text-center">
-        <div class="search flex items-center justify-between w-full">
-            <input type="text" placeholder="Enter city name" spellcheck="false" class="search-box border-0 outline-none bg-[#ebfffc] text-gray-700 p-2.5 px-6 h-[60px] rounded-full flex-1 mr-2 text-lg" />
-            <button class="search-btn border-0 outline-none bg-[#ebfffc] rounded-full w-[60px] h-[60px] cursor-pointer">
-                <img src="images/search.png" class="w-4 mx-auto" />
-            </button>
-            <button class="location-btn border-0 outline-none bg-[#ebfffc] rounded-full w-[60px] h-[60px] cursor-pointer ml-2">
-                <img src="images/current location.png" alt="Current Location" class="w-6 mx-auto" />
-            </button>
+  </head>
+  <body class="bg-gray-900 font-sans">
+    <div
+      class="card w-11/12 max-w-[470px] bg-gradient-to-bl from-[#00feba] to-[#5b548a] text-white mx-auto mt-12 rounded-2xl py-10 px-8 text-center"
+    >
+      <div class="search flex items-center justify-between w-full ">
+        <input
+          type="text"
+          placeholder="Enter city name"
+          spellcheck="false"
+          class="search-box border-0 outline-none bg-[#ebfffc] text-gray-700 p-2.5 px-6 h-[60px] rounded-full flex-1 mr-2 text-lg"
+        />
+        <button
+          class="search-btn border-0 outline-none bg-[#ebfffc] rounded-full w-[60px] h-[60px] cursor-pointer"
+        >
+          <img src="images/search.png" class="w-4 mx-auto" />
+        </button>
+        <button
+          class="location-btn border-0 outline-none bg-[#ebfffc] rounded-full w-[60px] h-[60px] cursor-pointer ml-2"
+        >
+          <img
+            src="images/current location.png"
+            alt="Current Location"
+            class="w-6 mx-auto"
+          />
+        </button>
+      </div>
+      <div class="recent-searches-container mt-2.5 hidden"></div>
+      <div class="error hidden text-left ml-2.5 text-sm mt-2.5">
+        <p>Invalid city name</p>
+      </div>
+      <div class="weather hidden">
+        <div
+          class="alert hidden bg-orange-500 text-white p-2.5 rounded-lg mb-5 font-bold"
+        >
+          <p>High Temperature Alert!</p>
         </div>
-        <div class="recent-searches-container mt-2.5 hidden">
+        <img
+          src="images/rain.png"
+          class="weather-icon w-[150px] mt-8 mx-auto"
+        />
+        <h1 class="temp text-7xl font-normal">22°c</h1>
+        <h2 class="city text-4xl font-normal -mt-2">New York</h2>
+        <div class="details flex items-center justify-between px-5 mt-12">
+          <div class="col flex items-center text-left">
+            <img src="images/humidity.png" class="w-10 mr-2.5" />
+            <div>
+              <p class="humidity text-3xl -mt-1.5">50%</p>
+              <p>Humidity</p>
             </div>
-        <div class="error hidden text-left ml-2.5 text-sm mt-2.5">
-            <p>Invalid city name</p>
+          </div>
+          <div class="col flex items-center text-left">
+            <img src="images/wind.png" class="w-10 mr-2.5" />
+            <div>
+              <p class="wind text-3xl -mt-1.5">15 km/hr</p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
         </div>
-        <div class="weather hidden">
-            <div class="alert hidden bg-orange-500 text-white p-2.5 rounded-lg mb-5 font-bold">
-                <p>High Temperature Alert!</p>
-            </div>
-            <img src="images/rain.png" class="weather-icon w-[150px] mt-8 mx-auto" />
-            <h1 class="temp text-7xl font-normal">22°c</h1>
-            <h2 class="city text-4xl font-normal -mt-2">New York</h2>
-            <div class="details flex items-center justify-between px-5 mt-12">
-                <div class="col flex items-center text-left">
-                    <img src="images/humidity.png" class="w-10 mr-2.5" />
-                    <div>
-                        <p class="humidity text-3xl -mt-1.5">50%</p>
-                        <p>Humidity</p>
-                    </div>
-                </div>
-                <div class="col flex items-center text-left">
-                    <img src="images/wind.png" class="w-10 mr-2.5" />
-                    <div>
-                        <p class="wind text-3xl -mt-1.5">15 km/hr</p>
-                        <p>Wind Speed</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <div class="forecast-container hidden w-11/12 max-w-3xl mx-auto my-8 text-center text-white">
-        <h2 class="forecast-title text-2xl mb-5">5-Day Forecast</h2>
-        <div class="forecast-days flex justify-between gap-4 flex-wrap">
-            </div>
+    <div
+      class="forecast-container hidden w-11/12 max-w-3xl mx-auto my-8 text-center text-white"
+    >
+      <h2 class="forecast-title text-2xl mb-5">5-Day Forecast</h2>
+      <div class="forecast-days flex justify-between gap-4 flex-wrap"></div>
+    </div>
+
+    <div class="flex justify-center mt-6">
+      <a
+        href="https://github.com/vipulsingh253/weather-repo"
+        target="_blank"
+        class="flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white px-5 py-3 rounded-full shadow-lg transition"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+          alt="GitHub"
+          class="w-6 h-6"
+        />
+        <span class="text-lg font-semibold">View on GitHub</span>
+      </a>
     </div>
 
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
